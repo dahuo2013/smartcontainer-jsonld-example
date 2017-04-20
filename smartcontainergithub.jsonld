@@ -1,0 +1,207 @@
+{ 
+"@context":{ "dc":"http://purl.org/dc/terms",
+			  "prov":"http://www.w3.org/ns/prov#",
+              "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+              "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+              "xsd":"http://www.w3.org/2001/XMLSchema#"
+            },
+"@graph": [
+	{   
+		"@id":"urn:uuid:0111d1ac-f44c-11e6-bc64-92361f002671",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#cmdActivity",
+	    			"https://w3id.org/daspos/computationalactivity#computationActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#cmdOperation", 
+	    											"prov:value":"CMD /paper/pipeline/docker-entrypoint.sh"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"42118e3df429",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:7345636a-f44c-11e6-bc64-92361f002671"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:58:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:65:0000:00"}
+	    "rdfs:label":"run script"
+	},
+	{	
+		"@id":"urn:uuid:7345636a-f44c-11e6-bc64-92361f002671",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"970633036444",
+		"prov:wasGeneratedBy":{"@id":"urn:uuid:0111d1ac-f44c-11e6-bc64-92361f002671"},
+		"rdfs:label":"ubuntu 14.04 installed khmer and nullgraph"
+	},
+	{
+		"@id":"khmer", 
+		"@type":"prov:SoftwareAgent",
+    	"http://w3id.org/daspos/docker#hasVersion":"??",
+    	"prov:actedOnBehalfOf":{"@id":""},
+    	"rdfs:label":"",
+    	"rdfs:seeAlso":{"@id":""}
+	},
+	{
+		"@id":"nullgraph", 
+		"@type":"prov:SoftwareAgent",
+    	"http://w3id.org/daspos/docker#hasVersion":"??",
+    	"prov:actedOnBehalfOf":{"@id":""},
+    	"rdfs:label":"",
+    	"rdfs:seeAlso":{"@id":""}
+	},
+	{   
+		"@id":"urn:uuid:0111d1ac-f44c-11e6-bc64-92361f002671",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#runActivity",
+	    			"https://w3id.org/daspos/computationalactivity#provisionActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#runOperation", 
+	    											"prov:value":"RUN git clone https://github.com/ged-lab/nullgraph.git /home/nullgraph && \
+													git clone https://github.com/ged-lab/khmer.git /home/khmer && \
+													cd /home/khmer && make install"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"175259937daf",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:8dfa3d44-f44b-11e6-bc64-92361f002671"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:56:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:57:0000:00"}
+	    "rdfs:label":"install khmer and nullgraph"
+	},
+	{
+		"@id":"Quake", 
+		"@type":"prov:SoftwareAgent",
+    	"http://w3id.org/daspos/docker#hasVersion":"??",
+    	"prov:actedOnBehalfOf":{"@id":""},
+    	"rdfs:label":"",
+    	"rdfs:seeAlso":{"@id":""}
+	},
+	{	
+		"@id":"urn:uuid:8dfa3d44-f44b-11e6-bc64-92361f002671",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"0dc2ed5be738",
+		"prov:wasGeneratedBy":{"@id":"urn:uuid:e9bb32e2-f44a-11e6-bc64-92361f002671"},
+		"rdfs:label":"ubuntu 14.04 installed Quake"
+	},
+	{   
+		"@id":"urn:uuid:e9bb32e2-f44a-11e6-bc64-92361f002671",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#runActivity",
+	    			"https://w3id.org/daspos/computationalactivity#provisionActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#runOperation", 
+	    											"prov:value":"RUN curl http://www.cbcb.umd.edu/software/quake/				downloads/quake-0.3.5.tar.gz > quake.tar.gz && \
+        														  tar xzf quake.tar.gz && \
+        														  cd Quake/src && \
+        														  make"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"6b379c331b43",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:3c0c6372-f446-11e6-bc64-92361f002671"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:54:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:55:0000:00"}
+	    "rdfs:label":"install Quake"
+	},
+	{	
+		"@id":"urn:uuid:3c0c6372-f446-11e6-bc64-92361f002671",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"7db783379fc3",
+		"prov:wasGeneratedBy":{"@id":"urn:uuid:1056fb1c-f445-11e6-bc64-92361f002671"},
+		"rdfs:label":"ubuntu 14.04 installed jellyfish"
+	},
+	{
+		"@id":"jellyfish", 
+		"@type":"prov:SoftwareAgent",
+    	"http://w3id.org/daspos/docker#hasVersion":"2.0",
+    	"prov:actedOnBehalfOf":{"@id":""},
+    	"rdfs:label":"",
+    	"rdfs:seeAlso":{"@id":""}
+	},
+	{   
+		"@id":"urn:uuid:1056fb1c-f445-11e6-bc64-92361f002671",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#runActivity",
+	    			"https://w3id.org/daspos/computationalactivity#provisionActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#runOperation", 
+	    											"prov:value":"RUN curl http://www.cbcb.umd.edu/software/							jellyfish/jellyfish-1.1.11.tar.gz > 						jellyfish.tar.gz && \
+        																	tar xzf jellyfish.tar.gz && \
+        																	cd jellyfish-1.1.11 && \
+        																	./configure && \
+        																	make"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"035cda81a0b6",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:e658fee6-f444-11e6-bc64-92361f002671"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:52:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:53:0000:00"}
+	    "rdfs:label":"install Jellyfish"
+	},
+	{	
+		"@id":"urn:uuid:e658fee6-f444-11e6-bc64-92361f002671",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"76f1a0767ecb",
+		"prov:wasGeneratedBy":{"@id":"urn:uuid:644480f2-f443-11e6-bc64-92361f002671"},
+		"rdfs:label":"updated ubuntu 14.04"
+	},
+	{   
+		"@id":"urn:uuid:644480f2-f443-11e6-bc64-92361f002671",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#runActivity",
+	    			"https://w3id.org/daspos/computationalactivity#provisionActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#runOperation", 
+	    											"prov:value":"RUN apt-get update && \
+	    															  apt-get install -y python-virtualenv python-dev git bowtie2 samtools libboost-dev zlib1g-dev"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"5330cf62b895",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:3f021fe1-59fc-4a02-ae20-85f1ff075d43"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:50:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:51:0000:00"}
+	    "rdfs:label":"update ubuntu 14.04"
+	},
+	{
+		"@id":"http://w3id.org/daspos/docker#docker", 
+		"@type":"prov:SoftwareAgent",
+    	"http://w3id.org/daspos/docker#hasVersion":"Dockerversion1.13.0,build49bf474",
+    	"prov:actedOnBehalfOf":{"@id":"https://w3id.org/daspos/smartcontainers#sc"},
+    	"rdfs:label":"Docker:https://www.docker.com/",
+    	"rdfs:seeAlso":{"@id":"https://www.docker.com/"}
+   	},
+	{	
+		"@id":"https://w3id.org/daspos/smartcontainers#sc",
+		"@type":"prov:SoftwareAgent",
+		"https://w3id.org/daspos/smartcontainers#hasVersion":"0.0.1",
+		"prov:actedOnBehalfOf":{"@id":"urn:uuid:569a4008-390b-4c54-806d-55be7fdae1e7"}
+	},
+	{	
+		"@id":"urn:uuid:3f021fe1-59fc-4a02-ae20-85f1ff075d43",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"7db783379fc3",
+		"prov:wasGeneratedBy":{"@id":"urn:uuid:569a4008-390b-4c54-806d-55be7fdae1e7"},
+		"rdfs:label":"smartcontainer ubuntu:14.04"
+	},
+	{   
+		"@id":"urn:uuid:569a4008-390b-4c54-806d-55be7fdae1e7",
+	    "@type":[
+	    			"http://w3id.org/daspos/docker#commitActivity",
+	    			"https://w3id.org/daspos/computationalactivity#provisionActivity",
+	    			"prov:Activity"
+	    		],
+	    "http://w3id.org/daspos/docker#hasCommand":{"@id":"http://w3id.org/daspos/docker#commitOperation", 
+	    											"prov:value":"sc commit"},
+	    "http://w3id.org/daspos/docker#hasContainerID":"5330cf62b895",
+	    "http://w3id.org/daspos/docker#hasContainerTag":"",
+	    "http://w3id.org/daspos/docker#startFromImage":{"@id":"urn:uuid:3cebaf52-f43f-11e6-bc64-92361f002671"}
+	    "prov:endedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:40:0000:00"},
+	    "prov:startedAtTime":{"@type":"xsd:dateTime","@value":"2015-11-10T03:39:0000:00"}
+	    "rdfs:label":"create smartcontainer"
+	},
+	{	
+		"@id":"urn:uuid:3cebaf52-f43f-11e6-bc64-92361f002671",
+		"@type":["prov:Entity","http://w3id.org/daspos/docker#Entity"],
+		"http://w3id.org/daspos/docker#hasImageID":"d0fd6c0bebd3",
+		"prov:wasGeneratedBy":{},
+		"rdfs:label":"a clean copy of ubuntu:14.04"
+	}
+],
+
+"@id":"http://www.example.com/gr"
+
+}
